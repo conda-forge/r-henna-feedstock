@@ -1,15 +1,15 @@
-{% set version = '0.7.5' %}
+{% set version = "0.8.5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-henna
-  version: "{{ version|replace('-', '_') }}"
+  version: {{ version|replace('-', '_') }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/henna_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/henna/henna_{{ version }}.tar.gz
-  sha256: 770c7754dfee12b984b2d0c5ad38be8a0d5f680965792f34fdff38ec5b194866
+  sha256: ccc23cc09313b5d97e2bf0d36fe8092f1fa6de27210f3d6a91e0830ce3c4ee22
 
 build:
   number: 0
@@ -71,11 +71,8 @@ test:
 about:
   home: https://github.com/andrei-stoica26/henna
   license: MIT
-  summary: A visualization suite primarily designed for single-cell RNA-sequencing data analysis
-    applications but well-suited for other purposes as well. It introduces novel plots
-    to represent two-variable and frequency data and optimizes some commonly used plotting
-    options (e.g., correlation, network, density, alluvial and volcano plots) for ease
-    of usage and flexibility.
+  summary: A visualization suite primarily designed for single-cell RNA-sequencing data analysis applications but well-suited for other purposes as well. It introduces novel plots to represent two-variable and frequency data and optimizes some commonly used plotting options (e.g., correlation, network, density, 
+    alluvial and volcano plots) for ease of usage and flexibility.
   license_family: MIT
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
